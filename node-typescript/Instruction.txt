@@ -1,0 +1,16 @@
+ขั้นตอนการเปลี่ยน Project Node JS ให้ไปใช้ Type Script
+================================================
+1. เปิด Terminal บน VS Code ขึ้นมา
+2. พิมพ์คำสั่ง tsc --init 
+3. ใน File tsconfig.json ให้ Uncomment และแก้ไขค่าดังนี้
+    => "target": "es6",                                
+    => "module": "commonjs",                          
+    => "moduleResolution": "node",
+    => "outDir": "./dist",                            
+    => "rootDir": "./src", 
+4. สร้าง Folder src เอาไว้เก็บ Source Code
+5. ใส่คำสั่ง npm init
+6. ใน File launch.json ให้แก้ไขค่า ดังนี้
+    => "program": "${workspaceFolder}\\dist\\app.js",
+7. สร้าง File app.ts เพื่อเป็นจุดเริ่มต้น Start Server
+8. ใช้คำสั่ง npm install --save-dev @types/node เพื่อให้ Intellisense ทำงาน (อยากได้ Package ไหน ให้เปลี่ยนชื่อเอา)
