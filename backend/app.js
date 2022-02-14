@@ -53,7 +53,7 @@ app.use((err, req, res, next) => {
 
 //#region MongoDB + Mongoose
 
-const MONGODB_URI = 'mongodb+srv://sanya_ped:Sanya220931@cluster0.58bzs.mongodb.net/social?retryWrites=true&w=majority';
+const MONGODB_URI = `mongodb+srv://${process.env.MDB_USERNAME}:${process.env.MDB_PASSWORD}@cluster0.58bzs.mongodb.net/${process.env.MDB_DBNAME}?retryWrites=true&w=majority`;
 
 const connectToAtlas = async () => {
     try {
